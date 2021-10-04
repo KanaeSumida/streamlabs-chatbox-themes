@@ -5,109 +5,69 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     overflow: hidden;
 }
 
 body {
-    background: #000000;
+    background: #616060;
     font-family: 'Nunito';
     font-weight: 700;
     font-size: 1rem;
-    line-height: 1.5em;
     color: #fff;
 }
 
-
+#log {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    
+}
 
 #log>div {
+    display: inline-block;
+    min-width: 1320px;
+    min-height: 320px;
+    /* must have position relative for .name absolute to work */
+    position: relative;
     animation: fadeInLeft .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
     -webkit-animation: fadeInLeft .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
 }
 
-/* not sure what this is hiding so i'll keep it */
-.colon {
-    display: none;
-}
-
-/* #log is the main parent div. All child divs are the actual messages */
-
-#log {
-    display: table;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 0 10px 10px;
-    width: 100%;
-    table-layout: fixed;
-}
-
-/* Applies to all child divs of log */
-#log>div {
-  	display: inline-block;
-    background-image: url('https://raw.githubusercontent.com/KanaeSumida/streamlabs-chatbox-themes/main/ffxiv-npc-textbox/ffxiv-npc-textbox.png');
-    background-repeat: none;
-    /* 
-        Width and height locked to the size of the background
-        image that's being used
-    */    
-    min-width: 660px !important;
-  	max-width: 660px !important;
-  	width: 660px !important;
-  	min-height: 160px !important;
-  	max-height: 160px !important;
-  	height: 160px !important;
-}
-
-/* Hides all messages that get deleted by a mod */
-#log>div.deleted {
-    visibility: hidden;
-}
-
-#log .emote {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    padding: 0.4em 0.2em;
-    position: relative;
-}
-
-#log .emote img {
-    display: inline-block;
-    height: 1em;
-    opacity: 0;
+#log .background-img {
+    width: 1320px;
+    height: 320px;
 }
 
 #log .name {
     position: absolute;
-    top: 0px;
-    left: 50px;
-    /* Width has to be set here for some reason or we get
-    artifacts below the text */
-     width: 250px !important;
+    top: 6px;
+    left: 126px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;    
+    -webkit-box-orient: vertical;
     text-align: left;
     color: #fff;
     overflow: hidden;
     word-wrap: break-word;
     text-overflow: ellipsis;
-    font-size: 1.5rem;
+    font-size: 55px;
 }
 
 #log .message {
     position: absolute;
-    top: 46px;
-    left: 52px;
+    top: 67px;
+    left: 100px;
+    width: 1070px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    padding-right: 40px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #222020;
-    font-size: 20px;
+    font-size: 53px;
 }
